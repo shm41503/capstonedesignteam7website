@@ -44,7 +44,6 @@ pnpm install
 pnpm dev
 
 
-
 # Deployment (Netlify)
 
 1. Build Command
@@ -67,11 +66,11 @@ Key Features
 
 🏠 Homepage – AR app overview & character intro
 
-🔐 Login/Signup – connected to Swagger API
+🔐 Login/Signup – connected to Swagger API 
 
 📊 Student Reports – view quiz scores & attendance
 
-🔢 Class Barcode – join class via code input
+Class Barcode popup – join class via code input 
 
 📲 Download Page – App Store / Play Store links
 
@@ -82,3 +81,4 @@ Create a new branch for your changes
 git checkout -b feature/your-feature-name
 
 ex: feature/add-login-popup
+

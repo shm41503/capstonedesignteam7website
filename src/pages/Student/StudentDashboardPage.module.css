@@ -1,0 +1,307 @@
+/* src/pages/Student/StudentDashboardPage.module.css */
+
+.page {
+  
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 16px 40px;
+  background: #e9f3ff;
+}
+
+/* 메인 카드 */
+.card {
+  width: 100%;
+  max-width: 1120px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(15, 35, 95, 0.15);
+  padding: 24px 28px 32px;
+  box-sizing: border-box;
+}
+
+/* 카드 상단 라인: Student Dashboard + Logout */
+.cardHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cardHeaderTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #1b2653;
+  font-size: 14px;
+}
+
+.cardHeaderIcon {
+  font-size: 18px;
+}
+
+.logoutButton {
+  border: 1px solid #cbd5ff;
+  background: #f7f8ff;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #1b2653;
+  transition: background 0.15s ease, transform 0.05s ease,
+    box-shadow 0.15s ease;
+}
+
+.logoutButton:hover {
+  background: #e5ebff;
+  box-shadow: 0 4px 10px rgba(27, 38, 83, 0.18);
+}
+
+.logoutButton:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
+
+/* 인사말 영역 */
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 4px 0 4px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #182241;
+}
+
+.subTitle {
+  margin: 0;
+  font-size: 14px;
+  color: #5b6484;
+}
+
+/* 요약 카드 3개 */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.statCard {
+  background: #f7f9ff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  border: 1px solid #dde5ff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.statLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #6b7291;
+}
+
+.statIcon {
+  font-size: 16px;
+}
+
+.statValue {
+  font-size: 22px;
+  font-weight: 700;
+  color: #182241;
+}
+
+/* 섹션 공통 */
+.section {
+  margin-top: 16px;
+}
+
+.sectionTitle {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #20263c;
+}
+
+/* 실험 카드 그리드 */
+.experimentsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.experimentCard {
+  border-radius: 12px;
+  border: 1px solid #e5e9ff;
+  padding: 14px 16px 14px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.experimentHeader {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.experimentIconPlaceholder {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #eef3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.experimentName {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2640;
+}
+
+.experimentStars {
+  margin: 0;
+  font-size: 13px;
+  color: #f4b000;
+}
+
+.experimentMetaRow {
+  display: flex;
+  gap: 16px;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8a8fb0;
+}
+
+.metaValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2640;
+}
+
+.viewButton {
+  align-self: flex-end;
+  margin-top: 4px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  background: #3268d9;
+  color: #ffffff;
+  transition: background 0.15s ease, transform 0.05s ease,
+    box-shadow 0.15s ease;
+}
+
+.viewButton:hover {
+  background: #2852b3;
+  box-shadow: 0 4px 10px rgba(50, 104, 217, 0.4);
+}
+
+.viewButton:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
+
+/* 테이블 */
+.tableWrapper {
+  border-radius: 12px;
+  border: 1px solid #e5e9ff;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table thead {
+  background: #f5f6ff;
+}
+
+.table th,
+.table td {
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.table th {
+  font-weight: 600;
+  color: #4c5474;
+  border-bottom: 1px solid #dde2ff;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #fbfcff;
+}
+
+.table tbody tr:hover {
+  background: #f1f4ff;
+}
+
+/* 빈 상태 */
+.emptyText {
+  font-size: 13px;
+  color: #7a809e;
+}
+
+/* 가운데 메시지 (로딩/로그인X) */
+.centerMessage {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333a5c;
+  font-size: 15px;
+}
+
+/* 푸터 */
+.footer {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #7b86a6;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .card {
+    padding: 18px 16px 22px;
+  }
+
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .experimentsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}

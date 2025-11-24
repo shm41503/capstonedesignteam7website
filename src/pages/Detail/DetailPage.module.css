@@ -1,0 +1,27 @@
+.page {
+  background: #f6f9ff;
+  border-radius: 18px;
+  padding: 24px 20px;
+}
+
+.tableWrap {
+  margin-top: 16px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #c6daf7;
+}
+
+.table {
+  width: 100%;
+  font-size: 13px;
+}
+
+.table th,
+.table td {
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.table thead {
+  background: #f1f4ff;
+}

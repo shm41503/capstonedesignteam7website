@@ -1,0 +1,32 @@
+.pageWrapper {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;              /* 가운데 영역이 남은 공간을 다 먹음 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f9ff;
+}
+
+.container {
+  background: #ffffff;
+  padding: 60px 80px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.btn {
+  background-color: #3268d9;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}

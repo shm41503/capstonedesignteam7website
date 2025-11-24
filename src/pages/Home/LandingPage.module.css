@@ -1,0 +1,194 @@
+.page {
+  /* leave space for header (~72px) */
+  min-height: calc(100vh - 72px);
+  width: 100%;
+  background: #e9f3ff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 96px 40px 80px;
+  box-sizing: border-box;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+/* LEFT SIDE */
+.left {
+  flex: 1.2;
+}
+
+.tagline {
+  margin: 0 0 12px;
+  color: #3268d9;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.title {
+  margin: 0 0 16px;
+  font-size: 40px;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.sub {
+  margin: 0 0 28px;
+  font-size: 16px;
+  color: #4b5563;
+  max-width: 520px;
+}
+
+/* LANGUAGE TOGGLE */
+.langToggle {
+  display: inline-flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.langButton {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #c6daf7;
+  background: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.langActive {
+  background: #3268d9;
+  border-color: #3268d9;
+  color: #ffffff;
+}
+
+/* MAIN BUTTONS */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btnPrimary,
+.btnGhost,
+.btnAccent {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btnPrimary:active,
+.btnGhost:active,
+.btnAccent:active {
+  transform: scale(0.95);
+}
+
+.btnPrimary {
+  background: #3268d9;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(50, 104, 217, 0.35);
+}
+
+.btnGhost {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+.btnAccent {
+  background: #ffc300;
+  color: #111827;
+}
+
+/* INFO CARDS */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 18px 20px;
+  margin-top: 14px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #111827;
+}
+
+.card ul,
+.card ol {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* RIGHT SIDE – MASCOT */
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character {
+  max-width: 320px;
+  width: 100%;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* simple float animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .page {
+    padding: 96px 20px 40px;
+  }
+
+  .inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left {
+    order: 1;
+  }
+
+  .right {
+    order: 0;
+ 
+  }
+
+  .sub {
+    max-width: none;
+  }
+
+  .card {
+    text-align: left;
+  }
+}
