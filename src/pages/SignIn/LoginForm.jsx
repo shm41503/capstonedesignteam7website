@@ -10,17 +10,38 @@ function LoginForm({ onSwitchToStudentSignup, onSwitchToTeacherSignup }) {
   const [userType, setUserType] = useState("student"); // "student" 또는 "teacher"
   const [name, setName] = useState("");
   const [classCode, setClassCode] = useState("");
-  const [password, setPassword] = useState("");
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+        // 백엔드 스펙에 맞춘 형태로 payload만 만들어 둠
+    const payload =
+      userType === "teacher"
+        ? {
+            teachername: name,
+            classcode: classCode,
+          }
+        : {
+            username: name,
+            classcode: classCode,
+          };
+
+    console.log("[LOGIN]", { userType, ...payload });
+
+    // TODO: 백엔드에서 로그인 API 스펙 나오면 여기서 fetch 추가
+    // 예시:
+    // const url = userType === "teacher" ? "/teacher/login" : "/student/login";
+    // const res = await fetch(url, { method: "POST", body: JSON.stringify(payload) })
+
+    alert("로그인 기능은 아직 백엔드와 연동 중입니다 🙂");
+    /*
     console.log("[LOGIN]", { 
       userType, 
       name, 
       classCode, 
       password 
     });
-    alert("로그인 기능은 아직 구현 중입니다 🙂");
+    alert("로그인 기능은 아직 구현 중입니다 🙂");*/
   };
 
   return (
@@ -86,21 +107,6 @@ function LoginForm({ onSwitchToStudentSignup, onSwitchToTeacherSignup }) {
         />
       </div>
 
-      {/* 비밀번호 */}
-      <div className={styles.field}>
-        <label className={styles.label} htmlFor="login-password">
-          비밀번호
-        </label>
-        <input
-          id="login-password"
-          className={styles.input}
-          type="password"
-          placeholder="비밀번호"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </div>
 
       <button type="submit" className={styles.buttonPrimary}>
         로그인
