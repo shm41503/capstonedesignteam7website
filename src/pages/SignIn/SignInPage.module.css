@@ -1,95 +1,245 @@
 /* src/pages/SignIn/SignInPage.module.css */
 
-.wrap {
-  min-height: calc(100vh - 160px); /* header + footer 영역 빼고 꽉 차게 */
-  background: #e9f3ff;
+/* 전체 페이지 */
+.page {
+  min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  background: linear-gradient(135deg, #1b2454 0%, #2d3f92 40%, #8b4cff 100%);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* 중앙 정렬용 메인 영역 */
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding-top: 96px;   /* 👈 header 아래로 내리는 진짜 여백 */
-  padding-bottom: 48px;
+  padding: 32px 16px;
 }
 
+/* 가운데 카드 */
 .card {
-  width: 360px;
-  background: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  background: rgba(9, 17, 37, 0.9);
   border-radius: 16px;
-  border: 1px solid #c6daf7;
-  padding: 24px 20px 20px;
-  box-shadow: 0 14px 40px rgba(15, 35, 95, 0.08);
+  padding: 28px 24px 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(18px);
 }
 
-.title {
-  margin: 0 0 16px;
-  font-size: 22px;
+/* 브랜드 / 제목 */
+.brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: #ffc300;
   text-align: center;
 }
 
-/* ROLE TOGGLE */
-.roleToggle {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 18px;
+.subtitle {
+  margin: 0 0 24px;
+  font-size: 0.9rem;
+  color: #b6b8c2;
+  text-align: center;
 }
 
-.roleToggle button {
-  flex: 1;
-  border-radius: 999px;
-  border: 1px solid #c6daf7;
-  background: #ffffff;
-  padding: 8px 0;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.active {
-  background: #3268d9;
+/* 뷰 제목 (LOGIN, 학생 회원가입, 선생님 회원가입) */
+.viewTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
   color: #ffffff;
-  border-color: #3268d9;
+  text-align: center;
+  margin: 0 0 24px;
+  letter-spacing: 0.05em;
 }
 
-/* FORM */
+/* 폼 영역 */
+.formWrapper {
+  margin-top: 0;
+}
+
+/* 공통 폼 스타일 */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
-.label {
-  font-size: 13px;
-  color: #555e70;
+.field {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
+.label {
+  font-size: 0.85rem;
+  color: #d4d7e5;
+  font-weight: 500;
+}
+
+.required {
+  color: #ff6b6b;
+  margin-left: 2px;
+}
+
 .input {
-  border-radius: 8px;
-  border: 1px solid #c6daf7;
-  padding: 8px 10px;
-  font-size: 13px;
-}
-
-.submit {
-  margin-top: 14px;
-  width: 100%;
-  border-radius: 999px;
-  border: none;
-  background: #3268d9;
+  border-radius: 10px;
+  border: 1px solid #323a6b;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  outline: none;
+  background: #0c1330;
   color: #ffffff;
-  padding: 10px 0;
-  font-size: 14px;
+  transition: border-color 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+
+.input::placeholder {
+  color: #6f7698;
+}
+
+.input:focus {
+  border-color: #8b4cff;
+  box-shadow: 0 0 0 1px rgba(139, 76, 255, 0.4);
+  background: #070d24;
+}
+
+/* 힌트 텍스트 */
+.hint {
+  font-size: 0.75rem;
+  color: #8a8fa3;
+  margin-top: 4px;
+  display: block;
+}
+
+/* 라디오 버튼 그룹 */
+.radioGroup {
+  display: flex;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   cursor: pointer;
+  color: #d4d7e5;
+  font-size: 0.9rem;
+  transition: color 0.15s ease;
 }
 
-/* click pop */
-.submit:active {
-  transform: scale(0.97);
+.radioLabel:hover {
+  color: #ffffff;
 }
 
-.helper {
+.radio {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #8b4cff;
+}
+
+/* 기본 버튼 */
+.buttonPrimary {
   margin-top: 8px;
-  font-size: 11px;
-  color: #555e70;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #8b4cff;
+  color: #ffffff;
+  transition: background 0.15s ease, transform 0.08s ease, box-shadow 0.12s ease;
+}
+
+.buttonPrimary:hover {
+  background: #a46dff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.buttonPrimary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* 회원가입 섹션 (로그인 폼 하단) */
+.signupSection {
+  margin-top: 20px;
   text-align: center;
+}
+
+.signupPrompt {
+  font-size: 0.85rem;
+  color: #b6b8c2;
+  margin: 0 0 8px;
+}
+
+.signupLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.separator {
+  color: #6f7698;
+  font-size: 0.85rem;
+}
+
+/* 로그인으로 돌아가기 (회원가입 폼 하단) */
+.backToLogin {
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* 텍스트 & 링크 버튼 */
+.switchText {
+  font-size: 0.85rem;
+  color: #b6b8c2;
+  margin: 0;
+}
+
+.linkButton {
+  border: none;
+  background: transparent;
+  color: #8b4cff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.linkButton:hover {
+  color: #a46dff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 500px) {
+  .card {
+    max-width: 100%;
+    padding: 24px 20px 20px;
+  }
+
+  .brand {
+    font-size: 1.4rem;
+  }
+
+  .viewTitle {
+    font-size: 1.5rem;
+  }
+
+  .signupLinks {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .separator {
+    display: none;
+  }
 }
